@@ -13,6 +13,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+      - name: Remove lock file
+        run: rm -f composer.lock
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
       - name: Copy .env file
@@ -32,6 +34,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+      - name: Remove lock file
+        run: rm -f composer.lock
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress --optimize-autoloader --no-dev
       - name: Compress release
